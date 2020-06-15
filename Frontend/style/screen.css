@@ -1,0 +1,801 @@
+/*------------------------------------*\
+  #FONTS
+\*------------------------------------*/
+@font-face {
+  font-family: "Fira Sans";
+  font-weight: 300;
+  src: url("../fonts/fira-sans-v10-latin-300.woff2") format("woff2"),
+       url("../fonts/fira-sans-v10-latin-300.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-weight: 400;
+  src: url("../fonts/fira-sans-v10-latin-regular.woff2") format("woff2"),
+       url("../fonts/fira-sans-v10-latin-regular.woff") format("woff");
+}
+
+
+/*------------------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: "Fira Sans", Helvetica, arial, sans-serif;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  background-color: #27054E;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+  background: #00B3CF;
+  color: white;
+  text-shadow: none;
+}
+
+::selection {
+  background: #00B3CF;
+  color: white;
+  text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+  Elements: Images
+  ---
+  Default markup for images to make them responsive
+*/
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+/*
+  Elements: typography
+  ---
+  Default markup for typographic elements
+*/
+
+h1 {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 14px;
+}
+
+@media (min-width: 768px) {
+  h1 {
+      font-size: 20px;
+      line-height: 24px;
+  }
+}
+
+h2 {
+  font-size: 23px;
+  line-height: 32px;
+  margin: 0 0 24px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+  margin: 0 0 24px;
+}
+
+ul,
+ol {
+  padding-left: 24px;
+}
+
+li ul,
+li ol {
+  margin-bottom: 0;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 23px;
+  line-height: 32px;
+  margin: 0 0 24px;
+  font-family: "Times New Roman", serif;
+}
+
+blockquote * {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+figcaption {
+  font-size: 12px;
+  line-height: 16px;
+  padding-top: 8px;
+  color: Grey;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: LightGrey;
+  margin: 0 0 24px;
+}
+
+a {
+  color: #1A0333;
+  transition: all .1s ease-in-out;
+  font-weight: 300;
+  font-size: 16px;
+
+}
+
+a:visited,
+a:active {
+  color: #B00933;
+}
+
+a:hover,
+a:focus {
+  color: #B00933;
+}
+
+.a-button{
+  text-decoration: none !important;
+}
+
+
+/* Example inline media query */
+
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+  Objects: Row
+  ---
+  Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+  padding: 8px 18px 0;
+  display: flow-root;
+}
+
+.o-row--header {
+  background: white;
+  color: #1A0333;
+}
+
+.o-row--piano{
+  padding: 0px 0px 0;
+}
+
+.o-row--grey-dark {
+  background-color: #111;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .o-row--lg {
+      padding: 48px 48px 24px;
+  }
+  .o-row--md{
+    padding: 16px 18px 0;
+  }
+}
+
+/*
+  Objects: Container
+  ---
+  Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 90em; /* 90 * 16px = 1440px */
+}
+
+/*
+  Objects: Layout
+  ---
+  The layout object provides us with a column-style layout system. This object
+  contains the basic structural elements, but classes should be complemented
+  with width utilities
+*/
+
+.o-layout {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+  .o-layout__item {
+      /* width: 100%; */
+      flex-basis: 100%;
+      text-align: center;
+  }
+  .o-layout__item--non-allign{
+    text-align: start;
+  }
+
+/* gutter modifiers, these affect o-layout__item too */
+
+.o-layout--gutter {
+  margin: 0 -12px;
+}
+
+.o-layout--gutter > .o-layout__item {
+  padding: 0 12px;
+}
+
+.o-layout--gutter-sm {
+  margin: 0 -6px;
+}
+
+.o-layout--gutter-sm > .o-layout__item {
+  padding: 0 6px;
+}
+
+.o-layout--gutter-lg {
+  margin: 0 -24px;
+}
+
+.o-layout--gutter-lg > .o-layout__item {
+  padding: 0 24px;
+}
+
+/* reverse horizontal row modifier */
+
+.o-layout--row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Horizontal alignment modifiers*/
+
+.o-layout--justify-start {
+  justify-content: flex-start;
+}
+
+.o-layout--justify-end {
+  justify-content: flex-end;
+}
+
+.o-layout--justify-center {
+  justify-content: center;
+}
+
+.o-layout--justify-space-around {
+  justify-content: space-around;
+}
+
+.o-layout--justify-space-evenly {
+  justify-content: space-evenly;
+}
+
+.o-layout--justify-space-between {
+  justify-content: space-between;
+}
+
+/* Vertical alignment modifiers */
+
+.o-layout--align-start {
+  align-items: flex-start;
+}
+
+.o-layout--align-end {
+  align-items: flex-end;
+}
+
+.o-layout--align-center {
+  align-items: center;
+}
+
+.o-layout--align-baseline {
+  align-items: baseline;
+}
+
+/* Vertical alignment modifiers that only work if there is one than one flex item */
+
+.o-layout--align-content-start {
+  align-content: start;
+}
+
+.o-layout--align-content-end {
+  align-content: end;
+}
+
+.o-layout--align-content-center {
+  align-content: center;
+}
+
+.o-layout--align-content-space-around {
+  align-content: space-around;
+}
+
+.o-layout--align-content-space-between {
+  align-content: space-between;
+}
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+  list-style: none;
+  padding: 0;
+}
+
+
+.o-icon{
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+.o-icon__symbol{
+  width: 100%;
+  border: white;
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+/*
+  Component: Component name
+  ---
+  Component description
+*/
+
+.c-button{
+  font-family: "Fira Sans";
+  background-color: #F91F57;
+  color: white;
+  font-weight: 300;
+  height: 28px;
+  line-height: 28px;
+  text-decoration: none;
+  border: white;
+}
+.c-button:hover{
+  color: #1A0333;
+}
+
+.c-note{
+  font-size: 25px;
+  height: 65px;
+  line-height: 65px;
+}
+
+.c-note--played{
+  display: block;
+    height: 65px;
+    width: 65px;
+    line-height: 65px;
+
+    -moz-border-radius: 50%; /* or 50% */
+    border-radius: 50%; /* or 50% */
+
+    border: 1px solid #F91F57;
+    color: #F91F57;
+    text-align: center;
+    font-size: 30px;
+}
+/*
+  Component: layout block
+  ---
+  A small component to demonstrate the layout items
+*/
+.c-logo {
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+.c-logo__symbol {
+  height: 100%;
+}
+.c-piano{
+  height: 156px;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+}
+.c-piano--mirrored{
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+@media(min-width: 768px){
+  .c-piano{
+    height: 150px;
+  }
+}
+
+@media(min-width: 1000px){
+  .c-piano{
+    height: 350px;
+  }
+}
+.c-piano__image {
+  width: 100%;
+  height: 100%;
+}
+.c-inhoud{
+  width: 960px;
+  height: 100%;
+}
+
+/*
+    Component: header
+    ---
+    Main header of the website
+*/
+.c-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.c-header--single{
+  justify-content: start;
+}
+
+.c-header__nav {
+  display: block;
+}
+.c-header__text{
+  height: 64px;
+  line-height: 64px;
+  font-weight: 300;
+  text-align: center;
+  
+}
+
+.c-layout-block {
+  background-color: LightGrey;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.c-layout-block--ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c-name{
+  font-family: 'Fira Sans';
+  font-weight: 300;
+  color: white;
+  background-color: #27054E;
+  width: 100%;
+  border :none;
+  border-bottom: 2px solid white;
+}
+
+/*
+    Component: Nav
+    ---
+    Main navigation of the site
+*/
+
+.c-nav__link,
+.c-nav__link:visited,
+.c-nav__link:active {
+    color: #1A0333;
+}
+
+
+.is-selected .c-nav__link,
+.c-nav__link:hover,
+.c-nav__link:focus {
+    color: #B00933;
+    text-decoration: underline;
+}
+
+.c-nav__link {
+  text-decoration: none;
+  font-weight: 400;
+  display: block;
+  padding: 8px 16px;
+}
+
+.c-nav__list {
+  display: flex;
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
+
+
+.c-slidecontainer {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.c-slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 1px; /* Specified height */
+  background: white; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.c-slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.c-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%; 
+  background: #F91F57;
+  cursor: pointer;
+}
+
+.c-slider::-moz-range-thumb {
+  width: 14px; /* Set a specific slider handle width */
+  height: 14px; /* Slider handle height */
+  background: #F91F57; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+
+.u-hidden{
+  visibility: hidden;
+}
+
+
+/*
+  Utilities: spacing
+  ---
+  Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-mb-clear {
+  margin-bottom: 0 !important;
+}
+
+.u-mb-xs {
+  margin-bottom: 4px !important;
+}
+
+.u-mb-sm {
+  margin-bottom: 8px !important;
+}
+
+.u-mb-md {
+  margin-bottom: 24px !important;
+}
+
+.u-mb-lg {
+  margin-bottom: 32px !important;
+}
+
+.u-mb-xl {
+  margin-bottom: 72px !important;
+}
+
+/*
+  Utilities: max-width
+  ---
+  Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-sm {
+  max-width: 36em !important;
+}
+
+.u-max-width-md {
+  max-width: 45em !important;
+}
+
+.u-max-width-lg {
+  max-width: 60em !important;
+}
+
+.u-max-width-xl {
+  max-width: 75em !important;
+}
+
+.u-max-width-none {
+  max-width: none !important;
+}
+
+
+.u-1-of-9 {
+  flex-basis: calc(100% / 9) !important;
+}
+.u-1-of-8 {
+  flex-basis: calc(100% / 8) !important;
+}
+
+.u-2-of-9 {
+  flex-basis: calc(100% / 9 * 2) !important;
+}
+.u-3-of-9 {
+  flex-basis: calc(100% / 9 * 3) !important;
+}
+.u-4-of-9 {
+  flex-basis: calc(100% / 9 * 4) !important;
+}
+.u-8-of-9 {
+  flex-basis: calc(100% / 9 * 8) !important;
+}
+.u-1-of-3 {
+  flex-basis: calc(100% / 3) !important;
+}
+.u-2-of-3 {
+  flex-basis: calc(100% / 3 * 2) !important;
+}
+
+@media (min-width: 1000px){
+  .u-1-of-9-bp3 {
+    flex-basis: calc(100% / 9) !important;
+  }
+}
+
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+
+/*
+  Media Queries
+  ---
+  EXAMPLE Media Queries for Responsive Design.
+  These examples override the primary ('mobile first') styles.
+  USE THEM INLINE!
+*/
+
+/* Extra small devices (portrait phones, less than 576px)
+ No media query since this is the default in mobile first design
+*/
+
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+*/
+
+/* Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+*/
+
+/* Large devices (landscape tablets, desktops, 992px and up)
+@media (min-width: 992px) {}
+*/
+
+/* Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+*/
+
+/*
+  Print styles.
+  ---
+  Inlined to avoid the additional HTTP request:
+  http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+  *,
+  *:before,
+  *:after {
+      background: transparent !important;
+      color: #000 !important;
+      /* Black prints faster:
+                                 http://www.sanbeiji.com/archives/953 */
+      box-shadow: none !important;
+      text-shadow: none !important;
+  }
+  a,
+  a:visited {
+      text-decoration: underline;
+  }
+  a[href]:after {
+      content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+      content: " (" attr(title) ")";
+  }
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+      content: "";
+  }
+
+
+  pre {
+      white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+  }
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+      display: table-header-group;
+  }
+  tr,
+  img {
+      page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+      orphans: 3;
+      widows: 3;
+  }
+  h2,
+  h3 {
+      page-break-after: avoid;
+  }
+}

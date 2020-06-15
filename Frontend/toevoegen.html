@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Synthesiser</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/screen.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <script src="script/app.js"></script>
+  </head>
+  <body>
+    <header class="o-row o-row--lg o-row--header">
+      <div class="o-container u-max-width-xl">
+        <div class="c-header c-header--single">
+            <div class="o-layout__item u-1-of-9">
+              <div class ="o-icon ">
+                  <a href="index.html">
+                      <svg class="o-icon__symbol o-icon__symbol--blue"  role="img" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" aria-labelledby="arrowLeftIconTitle" stroke=" #1A0333" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="white"> <title id="arrowLeftIconTitle">Arrow Left</title> <path d="M9 6l-6 6 6 6"/> <path d="M21 12H4"/> <path stroke-linecap="round" d="M3 12h1"/> 
+                      </svg>
+                  </a>
+              </div>
+            </div>
+            <div class="c-header__text o-layout__item u-4-of-9">
+                Save your track
+            </div>
+        </div>
+      </div>
+    </header>
+    <section class="o-row o-row--md u-mb-xl">
+        <div class="o-container u-max-width-lg">
+          <div class="o-layout o-layout--justify-center">
+            <h1>
+              Saving track: <span class="js-ctrack"></span>
+            </h1>
+          </div>
+        </div>
+    </section>
+    <form action="saved.html">
+          <section class="o-row o-row--md">
+              <div class="o-container u-max-width-lg">
+                  <label for="name">Track name:</label>
+                  <input class="c-name js-name" type="text" id="name" name="name" required >
+              </div>
+          </section>
+          <section class="o-row o-row--md">
+              <div class="o-container u-max-width-lg">
+                <div class="o-layout o-layout--gutter-sm"">
+                  <div class="o-layout__item o-layout__item--non-allign u-1-of-3">
+                      Key:
+                  </div>
+                  <div class="o-layout__item o-layout__item--non-allign u-1-of-3 js-key">
+                  </div>
+              </div>
+          </section>
+          <section class="o-row o-row--md">
+              <div class="o-container u-max-width-lg">
+                <div class="o-layout o-layout--align-end o-layout--gutter-sm">
+                  <div class="o-layout__item o-layout__item--non-allign u-1-of-3">
+                      Backingtrack
+                      tempo:
+                  </div>
+                  <div class="o-layout__item o-layout__item--non-allign u-1-of-3 "><span class="js-tempo"></span> bps
+                  </div>
+              </div>
+          </section>
+          <section class="o-row o-row--md u-mb-md">
+              <div class="o-container u-max-width-lg">
+                <div class="o-layout o-layout--align-end o-layout--gutter-sm">
+                  <div class="o-layout__item o-layout__item--non-allign u-1-of-3">
+                      Played time:
+                  </div>
+                  <div class="o-layout__item o-layout__item--non-allign u-1-of-3 js-time">
+                  </div>
+              </div>
+          </section>
+          <section class="o-row o-row--md">
+            <div class="o-container u-max-width-lg">
+              <div class="o-layout o-layout--justify-end">
+                <div class="o-layout__item u-1-of-3 u-1-of-9-bp3 js-savebtn">
+                  <a class="a-button" href="saved.html">
+                    <input type="submit" class="c-button" value="Save track">
+                  </div>
+                  </a>
+            </div>
+        </section>
+    </form>
+
+
+  </body>
